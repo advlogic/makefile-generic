@@ -6,10 +6,10 @@ BUILDDIR  := build
 BINDIR    := bin
 TARGET    := $(BINDIR)/$(PROJECT_NAME)
 SOURCES   := $(shell find $(SRCDIR) -type f -name *.c*)
-HEDEARS   := $(shell find $(HEADERDIR) -type f -name *.h*)
+HEADERS   := $(shell find $(HEADERDIR) -type f -name *.h*)
 OBJECTS   := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(addsuffix .o,$(basename $(SOURCES))))
 DEPS      := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(addsuffix .d,$(basename $(SOURCES))))
-CFLAGS    := -Wall -Werror -Wextra
+CFLAGS    := -Werror -Wextra
 LIB       :=
 INC       := -I include -I src
 
